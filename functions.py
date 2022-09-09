@@ -25,16 +25,20 @@ def clear():
 
 def encrypt(text, shift):
   for i in range(0,len(text)):
-    text=list(text)
-    index = alphabet.index(text[i])
-    index-=shift
-    text[i]=alphabet[index]
+    #Only encode letters
+    if text[i] in alphabet:
+      text=list(text)
+      index = alphabet.index(text[i])
+      index-=shift
+      text[i]=alphabet[index]
   print("Here's the encoded result: " + ''.join(text))
   
 def decrypt(text, shift):
   for i in range(0,len(text)):
-    text=list(text)
-    index = alphabet.index(text[i])
-    index-=shift
-    text[i]=alphabet[index]
+    #Only decode letters
+    if text[i] in alphabet:
+      text=list(text)
+      index = alphabet.index(text[i])
+      index-=shift
+      text[i]=alphabet[index]
   print("Here's the decoded result: " + ''.join(text))
